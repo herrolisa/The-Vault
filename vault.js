@@ -7,6 +7,8 @@ module.exports = function() {
     getValue: function(key) {
       if (!this[key]){
         return null;
+      }else{
+        return this[key];
       }
     }
   };
