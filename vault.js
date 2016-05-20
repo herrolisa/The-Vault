@@ -1,15 +1,21 @@
 'use strict';
 module.exports = function() {
-  return {
-    setValue: function(key, value) {
-      this[key] = value;
-    },
-    getValue: function(key) {
-      if (!this[key]){
-        return null;
-      }else{
-        return this[key];
-      }
+  //private variables
+  var secretVault = {};
+  //private methods
+  var setValue = function (key, value) {
+    secretVault[key] = value;
+  };
+  var getValue = function (key) {
+    if (!secretVault[key]){
+      return null;
+    }else{
+      return secretVault[key];
     }
+  };
+  //public
+  return {
+    setValue: setValue,
+    getValue: getValue
   };
 };
